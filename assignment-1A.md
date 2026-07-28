@@ -263,62 +263,33 @@ Read the official documentation of the following 5 agentic coding tools and stud
 
 # Part 2 — Prompt Engineering: Real-Life Scenarios
 
-For each scenario below, the prompt is broken into **Role**, **Context**, **Main**, and **Conclusion** — following the 4-part structure from AI Seekho Bootcamp Class 1.
-
----
-
 ## Scenario 1 — Budget Trip
 
-| Part | Prompt |
-|------|--------|
-| **ROLE** | You are a budget travel planner specializing in affordable domestic trips within Pakistan. |
-| **CONTEXT** | I have PKR 15,000 total, 3 free days, and 2 friends joining me. I cannot ask my parents for extra money — the entire trip must stay within budget. |
-| **MAIN** | Craft a realistic destination in Pakistan and a day-by-day plan covering transport, stay, and food that all three of us can afford. |
-| **CONCLUSION** | Present the output as a day-by-day itinerary table with a full cost breakdown at the end showing per-person and total expenses. |
+Act as a budget travel planner. I have PKR 15,000, 3 free days, and 2 friends, and can't ask my parents for extra money  suggest a realistic destination in Pakistan and build a day by day plan covering transport, stay, and food within budget. Present it as a day by day itinerary with a cost breakdown at the end.
 
 ---
 
 ## Scenario 2 — Difficult Message
 
-| Part | Prompt |
-|------|--------|
-| **ROLE** | You are a tenant communications expert who helps renters resolve maintenance issues professionally. |
-| **CONTEXT** | My water heater has been broken for 2 weeks despite 2 verbal requests to my landlord. Winter is approaching and I need it fixed, but I also want to renew my lease next year. |
-| **MAIN** | Craft a firm but respectful WhatsApp message to my landlord, plus a firmer backup message if the first one is ignored again. |
-| **CONCLUSION** | Keep both messages short, polite, and professional — no legal threats, no emotional language. Present them as "Message 1" and "Message 2 (Follow-up)." |
+Act as a tenant communications expert. My water heater's been broken 2 weeks despite 2 verbal requests, and I need it fixed before winter without hurting my chances of renewing the lease write a firm but respectful WhatsApp message, plus a firmer backup if it's ignored again. Keep both short and polite, no legal threats.
 
 ---
 
 ## Scenario 3 — Impossible Schedule
 
-| Part | Prompt |
-|------|--------|
-| **ROLE** | You are a productivity coach who designs realistic schedules based on energy levels, not just available hours. |
-| **CONTEXT** | I am a 6th-semester BS AI student with 5 courses, a 15 hr/week part-time job, a side-project deadline in 3 weeks, and a goal of going to the gym 4× per week. My energy dips in the afternoon (2–5 PM) and I keep failing schedules that ignore this pattern. |
-| **MAIN** | Craft a realistic weekly timetable that places demanding tasks during high-energy windows and lighter tasks during dips. |
-| **CONCLUSION** | Present it as a day-by-day table (Mon–Sun) with time blocks, activity labels, and honest notes on what to cut if the week still feels overloaded. |
+Act as a productivity coach. I'm a 6th-semester student with 5 courses, a 15hr/week job, a side-project deadline in 3 weeks, and a goal of gym 4x/week, and I keep failing schedules that ignore my energy dips   design a realistic weekly timetable that accounts for energy, not just free hours. Give it as a day by day table with honest notes on what to cut if it's overloaded.
 
 ---
 
 ## Scenario 4 — Broke Student Meal Plan
 
-| Part | Prompt |
-|------|--------|
-| **ROLE** | You are a budget meal planner for students living in Pakistan with minimal kitchen equipment. |
-| **CONTEXT** | I have PKR 8,000/month for food. My kitchen has only a stove and a small fridge — no oven, no microwave. I want to stop relying on instant noodles and fast food because it's tanking my energy and focus. |
-| **MAIN** | Craft a 7-day meal plan (breakfast, lunch, dinner) and one combined grocery list that fits my budget and equipment. |
-| **CONCLUSION** | Format as a day-by-day meal table plus a separate grocery list with item names, quantities, and a total cost that stays within PKR 8,000. |
+Act as a budget meal planner. I have PKR 8,000/month, only a stove and small fridge, and want to stop relying on instant noodles and fast food that's tanking my energy build a 7 day meal plan and one grocery list that fits the budget and equipment. Format as a day by day table plus a total cost grocery list.
 
 ---
 
 ## Scenario 5 — Scholarship Interview
 
-| Part | Prompt |
-|------|--------|
-| **ROLE** | You are a scholarship interview coach with experience preparing students for high-pressure panel interviews. |
-| **CONTEXT** | I have a scholarship interview in 5 days. The panel is known for asking about weaknesses and my 5-year plan. I tend to freeze up and ramble under pressure. |
-| **MAIN** | Run a mock interview with me — ask one question at a time, wait for my answer, then give direct feedback before moving to the next question. Cover at least 5 questions including weakness and long-term goals. |
-| **CONCLUSION** | After all questions, provide a short bullet-point summary of patterns I need to fix (e.g., rambling, lack of structure, weak examples). |
+Act as a scholarship interview coach. I have an interview in 5 days with a panel known for asking about weaknesses and my 5-year plan, and I freeze up and ramble under pressure run a mock interview one question at a time and give direct feedback after each answer. End with a short bullet point summary of patterns to fix.
 
 ---
 
