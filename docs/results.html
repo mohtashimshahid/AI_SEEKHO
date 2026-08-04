@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>EduSweden | Eligibility Results</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="js/script.js" defer></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary": "#3b4248",
+                    "primary-fixed": "#d1e4ff",
+                    "background": "#f9f9fc",
+                    "secondary-fixed-dim": "#f0c100",
+                    "surface": "#f9f9fc",
+                    "on-secondary-fixed": "#241a00",
+                    "on-primary": "#ffffff",
+                    "surface-tint": "#1261a0",
+                    "tertiary-fixed-dim": "#c0c7cf",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed-dim": "#9ecaff",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed": "#001d36",
+                    "inverse-on-surface": "#f0f0f3",
+                    "on-surface": "#1a1c1e",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-container": "#6e5700",
+                    "surface-container-low": "#f3f3f6",
+                    "inverse-primary": "#9ecaff",
+                    "secondary-container": "#fecc00",
+                    "outline-variant": "#c1c7d2",
+                    "on-tertiary-fixed": "#151c22",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed": "#dce3eb",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed-variant": "#40484e",
+                    "on-surface-variant": "#414750",
+                    "outline": "#717781",
+                    "tertiary-container": "#525960",
+                    "on-tertiary": "#ffffff",
+                    "surface-bright": "#f9f9fc",
+                    "on-tertiary-container": "#c9d0d7",
+                    "error": "#ba1a1a",
+                    "inverse-surface": "#2f3133",
+                    "on-background": "#1a1c1e",
+                    "on-primary-fixed-variant": "#00497c",
+                    "on-primary-container": "#aed2ff",
+                    "secondary": "#735c00",
+                    "surface-variant": "#e2e2e5",
+                    "surface-container-highest": "#e2e2e5",
+                    "surface-container": "#eeeef0",
+                    "on-secondary-fixed-variant": "#574500",
+                    "primary-container": "#005b99",
+                    "surface-dim": "#dadadc",
+                    "primary": "#004373",
+                    "surface-container-high": "#e8e8ea",
+                    "secondary-fixed": "#ffe089"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1200px",
+                    "base": "8px",
+                    "margin-mobile": "20px",
+                    "margin-desktop": "40px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Montserrat"],
+                    "body-md": ["Inter"],
+                    "headline-md": ["Montserrat"],
+                    "headline-lg-mobile": ["Montserrat"],
+                    "body-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-lg": ["Montserrat"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                    "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                    "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                    "headline-lg-mobile": ["28px", { "lineHeight": "34px", "fontWeight": "700" }],
+                    "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                    "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                    "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                    "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-sm">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 w-full max-w-container-max mx-auto">
+<a href="index.html" class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-size: 28px;">school</span>
+<span class="font-display-lg text-headline-md-mobile tracking-tight text-primary">EduSweden</span>
+</a>
+<nav class="hidden md:flex gap-6">
+<a class="text-on-surface-variant hover:text-primary font-label-md" href="index.html">Home</a>
+<a class="text-primary font-bold font-label-md" href="results.html">Results</a>
+<a class="text-on-surface-variant hover:text-primary font-label-md" href="recommendations.html">Recommendations</a>
+<a class="text-on-surface-variant hover:text-primary font-label-md" href="directory.html">Directory</a>
+<a class="text-on-surface-variant hover:text-primary font-label-md" href="dashboard.html">Dashboard</a>
+</nav>
+</div>
+</header>
+<main class="flex-grow pt-24 pb-20 px-margin-mobile md:px-margin-desktop w-full max-w-container-max mx-auto">
+<!-- Results Hero Section -->
+<div class="text-center mb-16">
+<h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-6">Your Eligibility Results</h1>
+<div class="flex justify-center mb-8">
+<div class="animate-pop bg-secondary-container text-on-secondary-container px-8 py-4 rounded-full flex items-center gap-3 shadow-md">
+<span class="material-symbols-outlined">warning</span>
+<span class="font-headline-md">Partially Meets</span>
+</div>
+</div>
+<p class="max-w-2xl mx-auto text-on-surface-variant text-body-lg">
+    Based on your current profile, you are a strong candidate for several Master's programs in Sweden!
+</p>
+</div>
+<!-- Criteria Table -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<div class="lg:col-span-2 space-y-4">
+<div class="bg-surface-container-lowest rounded-[24px] p-6 border border-outline-variant/30 shadow-sm">
+<h2 class="font-headline-md text-primary mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined">analytics</span>
+Criteria Breakdown
+</h2>
+<div class="space-y-3">
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl border-l-4 border-[#00C853]">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#00C853]">check_circle</span>
+<div>
+<p class="font-label-md text-on-surface">Academic Background</p>
+<p class="text-label-sm text-on-surface-variant">Bachelors in Engineering</p>
+</div>
+</div>
+<span class="text-label-sm font-semibold text-[#00C853]">Met</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl border-l-4 border-[#00C853]">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#00C853]">check_circle</span>
+<div>
+<p class="font-label-md text-on-surface">GPA Requirement</p>
+<p class="text-label-sm text-on-surface-variant">Minimum 3.0 / 4.0 equivalent</p>
+</div>
+</div>
+<span class="text-label-sm font-semibold text-[#00C853]">Met</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl border-l-4 border-[#FFAB00]">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#FFAB00]">warning</span>
+<div>
+<p class="font-label-md text-on-surface">English Proficiency</p>
+<p class="text-label-sm text-on-surface-variant">IELTS 6.5 or TOEFL equivalent</p>
+</div>
+</div>
+<span class="text-label-sm font-semibold text-[#FFAB00]">Warning</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Sidebar Actions -->
+<div class="space-y-6">
+<div class="bg-primary rounded-[24px] p-8 text-on-primary shadow-lg relative overflow-hidden">
+<h3 class="font-headline-md mb-4">Improve Your Score</h3>
+<p class="text-on-primary/80 mb-6">See tailored recommendations to boost your eligibility rating.</p>
+<a href="recommendations.html" class="w-full bg-secondary-container text-on-secondary-container font-label-md py-4 rounded-xl flex items-center justify-center gap-2 inline-block text-center">
+    View Recommendations <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<div class="bg-surface-container-lowest rounded-[24px] p-6 border border-outline-variant/30 text-center">
+<h4 class="font-label-md text-on-surface mb-2">Book a 1-on-1 Session</h4>
+<p class="text-label-sm text-on-surface-variant mb-4">Talk to an expert admissions advisor today.</p>
+<a href="consultation.html" class="px-6 py-3 border border-primary text-primary rounded-full font-label-md inline-block hover:bg-primary hover:text-white transition-colors">
+    Book Consultation
+</a>
+</div>
+</div>
+</div>
+<!-- Recommended Programs Preview -->
+<section class="mt-20">
+<div class="flex justify-between items-center mb-8">
+<h2 class="font-headline-md text-primary">Recommended Programs</h2>
+<a href="directory.html" class="text-primary font-label-md hover:underline flex items-center gap-1">
+    Explore All Directory <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface-container-lowest rounded-[24px] overflow-hidden border border-outline-variant/30 p-6 shadow-sm">
+<span class="bg-primary-fixed text-on-primary-fixed text-label-sm px-3 py-1 rounded-full">KTH Royal Institute</span>
+<h3 class="font-headline-md text-on-surface mt-3">MSc Software Engineering</h3>
+<p class="text-label-sm font-semibold text-secondary mt-2">Match Rate: 85%</p>
+</div>
+<div class="bg-surface-container-lowest rounded-[24px] overflow-hidden border border-outline-variant/30 p-6 shadow-sm">
+<span class="bg-primary-fixed text-on-primary-fixed text-label-sm px-3 py-1 rounded-full">Lund University</span>
+<h3 class="font-headline-md text-on-surface mt-3">MSc Data Science</h3>
+<p class="text-label-sm font-semibold text-secondary mt-2">Match Rate: 92%</p>
+</div>
+<div class="bg-surface-container-lowest rounded-[24px] overflow-hidden border border-outline-variant/30 p-6 shadow-sm">
+<span class="bg-primary-fixed text-on-primary-fixed text-label-sm px-3 py-1 rounded-full">Chalmers University</span>
+<h3 class="font-headline-md text-on-surface mt-3">MSc Interaction Design</h3>
+<p class="text-label-sm font-semibold text-secondary mt-2">Match Rate: 78%</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-auto bg-surface-container-low border-t border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center py-10 px-margin-mobile md:px-margin-desktop w-full max-w-container-max mx-auto">
+<div>
+<span class="font-headline-md text-primary">EduSweden</span>
+<p class="text-on-surface-variant text-label-sm mt-1">© 2024 EduSweden. Scandinavian Excellence in Admissions.</p>
+</div>
+<div class="flex gap-6">
+<a class="text-on-surface-variant font-body-md hover:text-secondary" href="index.html">Home</a>
+<a class="text-on-surface-variant font-body-md hover:text-secondary" href="recommendations.html">Recommendations</a>
+<a class="text-on-surface-variant font-body-md hover:text-secondary" href="directory.html">Directory</a>
+<a class="text-on-surface-variant font-body-md hover:text-secondary" href="dashboard.html">Dashboard</a>
+</div>
+</div>
+</footer>
+</body>
+</html>

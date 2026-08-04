@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>EduSweden | Login & Sign Up</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="js/script.js" defer></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary": "#3b4248",
+                    "primary-fixed": "#d1e4ff",
+                    "background": "#f9f9fc",
+                    "secondary-fixed-dim": "#f0c100",
+                    "surface": "#f9f9fc",
+                    "on-secondary-fixed": "#241a00",
+                    "on-primary": "#ffffff",
+                    "surface-tint": "#1261a0",
+                    "tertiary-fixed-dim": "#c0c7cf",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed-dim": "#9ecaff",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed": "#001d36",
+                    "inverse-on-surface": "#f0f0f3",
+                    "on-surface": "#1a1c1e",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-container": "#6e5700",
+                    "surface-container-low": "#f3f3f6",
+                    "inverse-primary": "#9ecaff",
+                    "secondary-container": "#fecc00",
+                    "outline-variant": "#c1c7d2",
+                    "on-tertiary-fixed": "#151c22",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed": "#dce3eb",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed-variant": "#40484e",
+                    "on-surface-variant": "#414750",
+                    "outline": "#717781",
+                    "tertiary-container": "#525960",
+                    "on-tertiary": "#ffffff",
+                    "surface-bright": "#f9f9fc",
+                    "on-tertiary-container": "#c9d0d7",
+                    "error": "#ba1a1a",
+                    "inverse-surface": "#2f3133",
+                    "on-background": "#1a1c1e",
+                    "on-primary-fixed-variant": "#00497c",
+                    "on-primary-container": "#aed2ff",
+                    "secondary": "#735c00",
+                    "surface-variant": "#e2e2e5",
+                    "surface-container-highest": "#e2e2e5",
+                    "surface-container": "#eeeef0",
+                    "on-secondary-fixed-variant": "#574500",
+                    "primary-container": "#005b99",
+                    "surface-dim": "#dadadc",
+                    "primary": "#004373",
+                    "surface-container-high": "#e8e8ea",
+                    "secondary-fixed": "#ffe089"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1200px",
+                    "base": "8px",
+                    "margin-mobile": "20px",
+                    "margin-desktop": "40px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Montserrat"],
+                    "body-md": ["Inter"],
+                    "headline-md": ["Montserrat"],
+                    "headline-lg-mobile": ["Montserrat"],
+                    "body-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-lg": ["Montserrat"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                    "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                    "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                    "headline-lg-mobile": ["28px", { "lineHeight": "34px", "fontWeight": "700" }],
+                    "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                    "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                    "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                    "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-background font-body-md text-on-background min-h-screen flex flex-col overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-sm">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 w-full max-w-container-max mx-auto">
+<a href="index.html" class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">school</span>
+<span class="font-display-lg text-headline-md-mobile tracking-tight text-primary">EduSweden</span>
+</a>
+<a class="text-on-surface-variant hover:opacity-80 transition-opacity flex items-center gap-1 group" href="index.html">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+<span class="font-label-md">Back to Home</span>
+</a>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex items-center justify-center pt-24 pb-12 px-margin-mobile relative overflow-hidden bg-pattern">
+<div class="w-full max-w-[480px] bg-surface-container-lowest rounded-[24px] shadow-xl border border-outline-variant/30 p-8 md:p-12 relative overflow-hidden">
+<!-- Toggle Navigation -->
+<div class="flex p-1 bg-surface-container-low rounded-full mb-10 w-full max-w-[320px] mx-auto">
+<button class="flex-1 py-3 px-4 rounded-full font-label-md transition-all duration-300 bg-surface-container-lowest text-primary shadow-sm" id="loginToggle" onclick="switchMode('login')">
+    Welcome Back
+</button>
+<button class="flex-1 py-3 px-4 rounded-full font-label-md transition-all duration-300 text-on-surface-variant" id="signupToggle" onclick="switchMode('signup')">
+    Start Journey
+</button>
+</div>
+<!-- Header Section -->
+<div class="text-center mb-8">
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-2" id="formTitle">Welcome Back</h1>
+<p class="font-body-md text-on-surface-variant" id="formSubtitle">Access your application dashboard and track your progress.</p>
+</div>
+<!-- Dynamic Form -->
+<form class="space-y-6" id="authForm">
+<div class="hidden opacity-0 h-0 overflow-hidden transition-all duration-300" id="nameField">
+<label class="block font-label-md text-on-surface mb-2">Full Name</label>
+<input class="w-full h-14 px-4 rounded-xl border border-outline focus:border-primary outline-none transition-all" placeholder="Erik Andersson" type="text"/>
+</div>
+<div>
+<label class="block font-label-md text-on-surface mb-2">Email Address</label>
+<input class="w-full h-14 px-4 rounded-xl border border-outline focus:border-primary outline-none transition-all" placeholder="erik@example.com" type="email" required/>
+</div>
+<div>
+<div class="flex justify-between items-center mb-2">
+<label class="block font-label-md text-on-surface">Password</label>
+<a class="text-primary font-label-sm hover:underline" href="#" id="forgotPass">Forgot password?</a>
+</div>
+<input class="w-full h-14 px-4 rounded-xl border border-outline focus:border-primary outline-none transition-all" placeholder="••••••••" type="password" required/>
+</div>
+<button class="w-full py-4 bg-primary text-on-primary font-label-md rounded-xl shadow-lg hover:opacity-90 active:scale-95 transition-all" id="submitBtn" type="submit">
+    Login to Dashboard
+</button>
+</form>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-auto bg-surface-container-low border-t border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center py-10 px-margin-mobile md:px-margin-desktop w-full max-w-container-max mx-auto gap-6 md:gap-0">
+<div>
+<span class="font-headline-md text-headline-md text-primary mb-2">EduSweden</span>
+<p class="font-body-md text-on-surface-variant">© 2024 EduSweden. Scandinavian Excellence in Admissions.</p>
+</div>
+<div class="flex gap-6">
+<a class="font-body-md text-on-surface-variant hover:text-secondary" href="index.html">Home</a>
+<a class="font-body-md text-on-surface-variant hover:text-secondary" href="dashboard.html">Dashboard</a>
+</div>
+</div>
+</footer>
+<script>
+function switchMode(mode) {
+    const loginToggle = document.getElementById('loginToggle');
+    const signupToggle = document.getElementById('signupToggle');
+    const nameField = document.getElementById('nameField');
+    const formTitle = document.getElementById('formTitle');
+    const formSubtitle = document.getElementById('formSubtitle');
+    const submitBtn = document.getElementById('submitBtn');
+    const forgotPass = document.getElementById('forgotPass');
+
+    if (mode === 'signup') {
+        loginToggle.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+        loginToggle.classList.add('text-on-surface-variant');
+        signupToggle.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+        signupToggle.classList.remove('text-on-surface-variant');
+
+        formTitle.innerText = "Start Your Journey";
+        formSubtitle.innerText = "Join the next generation of international students in Sweden.";
+        submitBtn.innerText = "Create Your Account";
+        forgotPass.classList.add('invisible');
+
+        nameField.classList.remove('hidden', 'opacity-0', 'h-0');
+        nameField.classList.add('opacity-100', 'h-auto', 'mb-6');
+    } else {
+        signupToggle.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+        signupToggle.classList.add('text-on-surface-variant');
+        loginToggle.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+        loginToggle.classList.remove('text-on-surface-variant');
+
+        formTitle.innerText = "Welcome Back";
+        formSubtitle.innerText = "Access your application dashboard and track your progress.";
+        submitBtn.innerText = "Login to Dashboard";
+        forgotPass.classList.remove('invisible');
+
+        nameField.classList.add('hidden', 'opacity-0', 'h-0');
+        nameField.classList.remove('opacity-100', 'h-auto', 'mb-6');
+    }
+}
+
+document.getElementById('authForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const btn = document.getElementById('submitBtn');
+    btn.innerText = 'Authenticating...';
+    btn.disabled = true;
+    setTimeout(() => {
+        window.location.href = 'dashboard.html';
+    }, 1000);
+});
+</script>
+</body>
+</html>

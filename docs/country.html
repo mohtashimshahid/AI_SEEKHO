@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>EduSweden | Select Country</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="js/script.js" defer></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary": "#3b4248",
+                    "primary-fixed": "#d1e4ff",
+                    "background": "#f9f9fc",
+                    "secondary-fixed-dim": "#f0c100",
+                    "surface": "#f9f9fc",
+                    "on-secondary-fixed": "#241a00",
+                    "on-primary": "#ffffff",
+                    "surface-tint": "#1261a0",
+                    "tertiary-fixed-dim": "#c0c7cf",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed-dim": "#9ecaff",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed": "#001d36",
+                    "inverse-on-surface": "#f0f0f3",
+                    "on-surface": "#1a1c1e",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-container": "#6e5700",
+                    "surface-container-low": "#f3f3f6",
+                    "inverse-primary": "#9ecaff",
+                    "secondary-container": "#fecc00",
+                    "outline-variant": "#c1c7d2",
+                    "on-tertiary-fixed": "#151c22",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed": "#dce3eb",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed-variant": "#40484e",
+                    "on-surface-variant": "#414750",
+                    "outline": "#717781",
+                    "tertiary-container": "#525960",
+                    "on-tertiary": "#ffffff",
+                    "surface-bright": "#f9f9fc",
+                    "on-tertiary-container": "#c9d0d7",
+                    "error": "#ba1a1a",
+                    "inverse-surface": "#2f3133",
+                    "on-background": "#1a1c1e",
+                    "on-primary-fixed-variant": "#00497c",
+                    "on-primary-container": "#aed2ff",
+                    "secondary": "#735c00",
+                    "surface-variant": "#e2e2e5",
+                    "surface-container-highest": "#e2e2e5",
+                    "surface-container": "#eeeef0",
+                    "on-secondary-fixed-variant": "#574500",
+                    "primary-container": "#005b99",
+                    "surface-dim": "#dadadc",
+                    "primary": "#004373",
+                    "surface-container-high": "#e8e8ea",
+                    "secondary-fixed": "#ffe089"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1200px",
+                    "base": "8px",
+                    "margin-mobile": "20px",
+                    "margin-desktop": "40px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Montserrat"],
+                    "body-md": ["Inter"],
+                    "headline-md": ["Montserrat"],
+                    "headline-lg-mobile": ["Montserrat"],
+                    "body-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-lg": ["Montserrat"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                    "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                    "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                    "headline-lg-mobile": ["28px", { "lineHeight": "34px", "fontWeight": "700" }],
+                    "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                    "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                    "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                    "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="min-h-screen flex flex-col font-body-md">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-sm">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 w-full max-w-container-max mx-auto">
+<a href="index.html" class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl">school</span>
+<span class="font-display-lg text-headline-md-mobile md:text-headline-md tracking-tight text-primary">EduSweden</span>
+</a>
+<nav class="hidden md:flex items-center gap-6">
+<a href="index.html" class="text-on-surface-variant hover:text-primary">Home</a>
+<a href="country.html" class="text-primary font-bold">Country</a>
+<a href="study-level.html" class="text-on-surface-variant hover:text-primary">Study Level</a>
+<a href="form.html" class="text-on-surface-variant hover:text-primary">Form</a>
+</nav>
+</div>
+</header>
+<main class="flex-grow pt-24 pb-20 px-margin-mobile md:px-margin-desktop w-full max-w-container-max mx-auto">
+<!-- Progress Stepper -->
+<div class="max-w-xl mx-auto mb-12">
+<div class="flex items-center justify-between relative">
+<div class="absolute top-1/2 left-0 w-full h-[2px] bg-surface-container-highest -translate-y-1/2 z-0"></div>
+<a href="index.html" class="relative z-10 flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<span class="font-label-sm text-primary mt-2">Start</span>
+</a>
+<div class="relative z-10 flex flex-col items-center">
+<div class="w-10 h-10 rounded-full bg-secondary-container border-2 border-secondary flex items-center justify-center text-on-secondary-container stepper-node active">
+<span class="font-label-md">2</span>
+</div>
+<span class="font-label-md text-on-surface mt-2">Country</span>
+</div>
+<a href="study-level.html" class="relative z-10 flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant">
+<span class="font-label-sm">3</span>
+</div>
+<span class="font-label-sm text-on-surface-variant mt-2">Level</span>
+</a>
+<a href="form.html" class="relative z-10 flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant">
+<span class="font-label-sm">4</span>
+</div>
+<span class="font-label-sm text-on-surface-variant mt-2">Form</span>
+</a>
+</div>
+</div>
+<!-- Headline & Subtext -->
+<div class="text-center mb-10">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-3">Where are you from?</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+    We need this to determine your specific degree requirements and tuition fee status.
+</p>
+</div>
+<!-- Search Bar Section -->
+<div class="max-w-2xl mx-auto mb-12">
+<div class="relative flex items-center search-glow transition-all duration-300 bg-white rounded-xl border border-outline-variant px-4 h-14">
+<span class="material-symbols-outlined text-outline mr-3">search</span>
+<input class="flex-grow bg-transparent border-none focus:ring-0 text-body-md text-on-surface placeholder:text-outline-variant" id="countrySearch" placeholder="Search your country..." type="text"/>
+</div>
+</div>
+<!-- Country Grid -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="countryGrid">
+<button class="country-card glass-card rounded-[24px] p-6 flex flex-col items-center text-center transition-all duration-300 group">
+<div class="w-16 h-12 mb-4 overflow-hidden rounded-lg shadow-sm border border-outline-variant">
+<div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAElo_UWFCrTi01aj4y0a9kmerc2Qy_UvLHJawcEwzjF_qVLgAwcYCJ1bWa_ybnp6LnM06BxI96NWFF8o0COBUHOpbY1DEHI5x58pqG2L4IDN44WYe-yaAhI6Cf5fdVEp1jtyW4zp7q10f8kpn7UT8d3rcG244fjTShQaxxnqGMfeFuDuJOQ3LY-DMvmyYxxk_qDBzpbXeCvHvMdJ5mtwT6RFsql-5Tgtc3CE-znUltP3N4Wn1YJg')"></div>
+</div>
+<span class="font-headline-md text-on-surface group-hover:text-primary transition-colors">India</span>
+<span class="font-label-sm text-on-surface-variant mt-1">Tuition fees apply</span>
+</button>
+<button class="country-card glass-card rounded-[24px] p-6 flex flex-col items-center text-center transition-all duration-300 group">
+<div class="w-16 h-12 mb-4 overflow-hidden rounded-lg shadow-sm border border-outline-variant">
+<div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBBE768_MUabyRhfzpodQ8r0PmKPzoxna4o020oke4j3kZN-b05SwrAlcti58c6b3PZEr_qLQ7t0Qxi4t04TBBJHpShn8fSL0pi9yARq9FENY7iSMLzW6FlZyj5iXSooGFU4d5K9AKpnSyl8qaxzpuKTJr2hs4yzll-ENGnJ7qCOj5S8NHSl82wQ6-ZG46Lezpm1xBetSxLOcYSCdUuj3TcJnqLxlcsUOyC7W2OxzjsVqzbLZaRMQ')"></div>
+</div>
+<span class="font-headline-md text-on-surface group-hover:text-primary transition-colors">Germany</span>
+<span class="font-label-sm text-primary font-semibold mt-1">EU/EEA No fees</span>
+</button>
+<button class="country-card glass-card rounded-[24px] p-6 flex flex-col items-center text-center transition-all duration-300 group">
+<div class="w-16 h-12 mb-4 overflow-hidden rounded-lg shadow-sm border border-outline-variant">
+<div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCT6q2j22C-sRcNQyNs9gJnVvdhm30Df6v_RLz2dhi7YsCa4ojTZ8_fmDB0q6uXc6vIcS0EpPCQYutZkuUfn7MSfXI9G37VOMmVueb9cFWk1Ngh0odnzJ8i8QMq1zmaHKdP5Qzj2M9yjSCNmrX2rmRJp9qEw3j87PQ0NSewu_bJStQqyQEy0aKBT6pdh5vWCS6R-ytGQevePRhQUEdR7JI8JsSFIm36D3dbFp0-NUtpCbY18yNeKg')"></div>
+</div>
+<span class="font-headline-md text-on-surface group-hover:text-primary transition-colors">United States</span>
+<span class="font-label-sm text-on-surface-variant mt-1">Tuition fees apply</span>
+</button>
+<button class="country-card glass-card rounded-[24px] p-6 flex flex-col items-center text-center transition-all duration-300 group">
+<div class="w-16 h-12 mb-4 overflow-hidden rounded-lg shadow-sm border border-outline-variant">
+<div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD-Iyh7qO8dGKcgrQw_2GWbUY4Dt5sPSYAHbgLpEN9Ad9AScwWYUfEzOohAD2PT-nM16Lfa5mckkmwck1BCI77QIqhPKmCM5vG7VfYDkZzg1cw2wrJxS7--AqRNYsdlc1TQLE5IQ1EQumuVjq-4mrzvavUgWRXDjeUVf9K69uLjgVG5kKiqv4FO4GYOcanYEfDifdQw0eS3MpH1sdMENgzcyuPDGpnACDNjlid4_Q7bHeoyg_4UyQ')"></div>
+</div>
+<span class="font-headline-md text-on-surface group-hover:text-primary transition-colors">China</span>
+<span class="font-label-sm text-on-surface-variant mt-1">Tuition fees apply</span>
+</button>
+</div>
+<!-- Sticky Footer Action -->
+<div class="mt-16 flex flex-col items-center justify-center gap-4">
+<p class="font-label-md text-on-surface-variant">Selected your country?</p>
+<a href="study-level.html" class="px-8 py-4 bg-secondary-container text-on-secondary-container font-headline-md rounded-full shadow-md hover:opacity-90 active:scale-[0.98] transition-all flex items-center gap-2">
+    Continue to Study Level <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-auto bg-surface-container-low border-t border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center py-10 px-margin-mobile md:px-margin-desktop w-full max-w-container-max mx-auto">
+<div class="mb-6 md:mb-0 text-center md:text-left">
+<div class="font-headline-md text-headline-md text-primary mb-2">EduSweden</div>
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 EduSweden. Scandinavian Excellence in Admissions.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-body-md text-on-surface-variant hover:text-secondary" href="index.html">Home</a>
+<a class="font-body-md text-on-surface-variant hover:text-secondary" href="country.html">Country</a>
+<a class="font-body-md text-on-surface-variant hover:text-secondary" href="study-level.html">Study Level</a>
+<a class="font-body-md text-on-surface-variant hover:text-secondary" href="form.html">Form</a>
+</div>
+</div>
+</footer>
+<script>
+    const searchInput = document.getElementById('countrySearch');
+    const countryCards = document.querySelectorAll('.country-card');
+
+    searchInput.addEventListener('input', (e) => {
+        const term = e.target.value.toLowerCase();
+        countryCards.forEach(card => {
+            const countryName = card.querySelector('.font-headline-md').textContent.toLowerCase();
+            if (countryName.includes(term)) {
+                card.style.display = 'flex';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+
+    countryCards.forEach(card => {
+        card.addEventListener('click', () => {
+            countryCards.forEach(c => c.classList.remove('border-primary', 'bg-primary-fixed/20'));
+            card.classList.add('border-primary', 'bg-primary-fixed/20');
+        });
+    });
+</script>
+</body>
+</html>

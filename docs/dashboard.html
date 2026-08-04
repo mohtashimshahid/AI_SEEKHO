@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>EduSweden | User Dashboard</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="js/script.js" defer></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary": "#3b4248",
+                    "primary-fixed": "#d1e4ff",
+                    "background": "#f9f9fc",
+                    "secondary-fixed-dim": "#f0c100",
+                    "surface": "#f9f9fc",
+                    "on-secondary-fixed": "#241a00",
+                    "on-primary": "#ffffff",
+                    "surface-tint": "#1261a0",
+                    "tertiary-fixed-dim": "#c0c7cf",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed-dim": "#9ecaff",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed": "#001d36",
+                    "inverse-on-surface": "#f0f0f3",
+                    "on-surface": "#1a1c1e",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-container": "#6e5700",
+                    "surface-container-low": "#f3f3f6",
+                    "inverse-primary": "#9ecaff",
+                    "secondary-container": "#fecc00",
+                    "outline-variant": "#c1c7d2",
+                    "on-tertiary-fixed": "#151c22",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed": "#dce3eb",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed-variant": "#40484e",
+                    "on-surface-variant": "#414750",
+                    "outline": "#717781",
+                    "tertiary-container": "#525960",
+                    "on-tertiary": "#ffffff",
+                    "surface-bright": "#f9f9fc",
+                    "on-tertiary-container": "#c9d0d7",
+                    "error": "#ba1a1a",
+                    "inverse-surface": "#2f3133",
+                    "on-background": "#1a1c1e",
+                    "on-primary-fixed-variant": "#00497c",
+                    "on-primary-container": "#aed2ff",
+                    "secondary": "#735c00",
+                    "surface-variant": "#e2e2e5",
+                    "surface-container-highest": "#e2e2e5",
+                    "surface-container": "#eeeef0",
+                    "on-secondary-fixed-variant": "#574500",
+                    "primary-container": "#005b99",
+                    "surface-dim": "#dadadc",
+                    "primary": "#004373",
+                    "surface-container-high": "#e8e8ea",
+                    "secondary-fixed": "#ffe089"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1200px",
+                    "base": "8px",
+                    "margin-mobile": "20px",
+                    "margin-desktop": "40px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Montserrat"],
+                    "body-md": ["Inter"],
+                    "headline-md": ["Montserrat"],
+                    "headline-lg-mobile": ["Montserrat"],
+                    "body-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-lg": ["Montserrat"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                    "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                    "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                    "headline-lg-mobile": ["28px", { "lineHeight": "34px", "fontWeight": "700" }],
+                    "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                    "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                    "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                    "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="font-body-md text-body-md">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-sm">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 w-full max-w-container-max mx-auto">
+<a href="index.html" class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl">school</span>
+<span class="font-display-lg text-headline-md-mobile tracking-tight text-primary">EduSweden</span>
+</a>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-on-surface-variant hover:text-primary font-label-md" href="index.html">Home</a>
+<a class="text-on-surface-variant hover:text-primary font-label-md" href="directory.html">Directory</a>
+<a class="text-primary font-bold font-label-md" href="dashboard.html">Dashboard</a>
+<a class="text-on-surface-variant hover:text-primary font-label-md" href="results.html">Results</a>
+</nav>
+</div>
+</header>
+<main class="pt-24 pb-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Welcome Section -->
+<section class="mb-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">God morgon, Student!</h1>
+<p class="text-on-surface-variant mt-2 max-w-2xl">Track your application progress, review your eligibility reports, and manage your shortlisted Swedish university programs.</p>
+</div>
+<div class="flex gap-3">
+<a href="country.html" class="px-6 py-3 rounded-xl bg-secondary-container text-on-secondary-container font-label-md flex items-center gap-2 shadow-sm inline-block">
+    <span class="material-symbols-outlined">bolt</span> Check Eligibility
+</a>
+<a href="form.html" class="px-6 py-3 rounded-xl bg-primary text-on-primary font-label-md flex items-center gap-2 shadow-sm inline-block">
+    <span class="material-symbols-outlined">upload_file</span> New Application
+</a>
+</div>
+</div>
+</section>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Left Column -->
+<aside class="md:col-span-4 flex flex-col gap-gutter">
+<div class="bg-surface-container-lowest rounded-[24px] p-6 shadow-sm border border-outline-variant/30 flex flex-col items-center text-center">
+<div class="w-24 h-24 rounded-full bg-primary-fixed flex items-center justify-center text-primary mb-4">
+<span class="material-symbols-outlined text-4xl">person</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Erik Johansson</h2>
+<p class="text-on-surface-variant font-body-md">Applicant Candidate</p>
+</div>
+</aside>
+<!-- Right Column -->
+<div class="md:col-span-8 flex flex-col gap-gutter">
+<div class="bg-surface-container-lowest rounded-[24px] p-8 shadow-sm border border-outline-variant/30">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline-md text-headline-md text-on-surface">Shortlisted Programs</h3>
+<a class="text-primary text-label-md hover:underline" href="directory.html">View All</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="p-5 rounded-2xl border border-outline-variant bg-surface">
+<h4 class="font-headline-md text-on-surface mb-1">MSc Sustainable Tech</h4>
+<p class="text-body-md text-on-surface-variant mb-4">Lund University</p>
+<a href="results.html" class="text-primary font-label-md hover:underline">View Eligibility</a>
+</div>
+<div class="p-5 rounded-2xl border border-outline-variant bg-surface">
+<h4 class="font-headline-md text-on-surface mb-1">MSc Computer Science</h4>
+<p class="text-body-md text-on-surface-variant mb-4">Uppsala University</p>
+<a href="results.html" class="text-primary font-label-md hover:underline">View Eligibility</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-auto bg-surface-container-low border-t border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center py-10 px-margin-mobile md:px-margin-desktop w-full max-w-container-max mx-auto">
+<div>
+<span class="font-headline-md text-primary">EduSweden</span>
+<p class="text-body-md text-on-surface-variant mt-2">© 2024 EduSweden. Scandinavian Excellence in Admissions.</p>
+</div>
+<div class="flex gap-6">
+<a class="text-on-surface-variant font-body-md hover:text-secondary" href="index.html">Home</a>
+<a class="text-on-surface-variant font-body-md hover:text-secondary" href="directory.html">Directory</a>
+<a class="text-on-surface-variant font-body-md hover:text-secondary" href="consultation.html">Consultation</a>
+</div>
+</div>
+</footer>
+</body>
+</html>

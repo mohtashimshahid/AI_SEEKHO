@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>EduSweden | Your Nordic Journey Starts Here</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="js/script.js" defer></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary": "#3b4248",
+                    "primary-fixed": "#d1e4ff",
+                    "background": "#f9f9fc",
+                    "secondary-fixed-dim": "#f0c100",
+                    "surface": "#f9f9fc",
+                    "on-secondary-fixed": "#241a00",
+                    "on-primary": "#ffffff",
+                    "surface-tint": "#1261a0",
+                    "tertiary-fixed-dim": "#c0c7cf",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed-dim": "#9ecaff",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed": "#001d36",
+                    "inverse-on-surface": "#f0f0f3",
+                    "on-surface": "#1a1c1e",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-container": "#6e5700",
+                    "surface-container-low": "#f3f3f6",
+                    "inverse-primary": "#9ecaff",
+                    "secondary-container": "#fecc00",
+                    "outline-variant": "#c1c7d2",
+                    "on-tertiary-fixed": "#151c22",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed": "#dce3eb",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed-variant": "#40484e",
+                    "on-surface-variant": "#414750",
+                    "outline": "#717781",
+                    "tertiary-container": "#525960",
+                    "on-tertiary": "#ffffff",
+                    "surface-bright": "#f9f9fc",
+                    "on-tertiary-container": "#c9d0d7",
+                    "error": "#ba1a1a",
+                    "inverse-surface": "#2f3133",
+                    "on-background": "#1a1c1e",
+                    "on-primary-fixed-variant": "#00497c",
+                    "on-primary-container": "#aed2ff",
+                    "secondary": "#735c00",
+                    "surface-variant": "#e2e2e5",
+                    "surface-container-highest": "#e2e2e5",
+                    "surface-container": "#eeeef0",
+                    "on-secondary-fixed-variant": "#574500",
+                    "primary-container": "#005b99",
+                    "surface-dim": "#dadadc",
+                    "primary": "#004373",
+                    "surface-container-high": "#e8e8ea",
+                    "secondary-fixed": "#ffe089"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1200px",
+                    "base": "8px",
+                    "margin-mobile": "20px",
+                    "margin-desktop": "40px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Montserrat"],
+                    "body-md": ["Inter"],
+                    "headline-md": ["Montserrat"],
+                    "headline-lg-mobile": ["Montserrat"],
+                    "body-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-lg": ["Montserrat"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-sm">
+<nav class="flex justify-between items-center px-margin-mobile h-16 w-full max-w-container-max mx-auto">
+<a href="index.html" class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl">school</span>
+<span class="font-display-lg text-headline-md-mobile tracking-tight text-primary">EduSweden</span>
+</a>
+<div class="hidden md:flex items-center gap-6">
+<a class="text-primary font-bold transition-opacity hover:opacity-80" href="index.html">Home</a>
+<a class="text-on-surface-variant transition-opacity hover:opacity-80" href="about.html">About</a>
+<a class="text-on-surface-variant transition-opacity hover:opacity-80" href="country.html">Country</a>
+<a class="text-on-surface-variant transition-opacity hover:opacity-80" href="study-level.html">Study Level</a>
+<a class="text-on-surface-variant transition-opacity hover:opacity-80" href="directory.html">Directory</a>
+<a class="text-on-surface-variant transition-opacity hover:opacity-80" href="dashboard.html">Dashboard</a>
+<a class="text-on-surface-variant transition-opacity hover:opacity-80" href="faq.html">FAQ</a>
+</div>
+<div class="flex items-center gap-4">
+<a href="login.html" class="text-on-surface-variant font-label-md hover:text-primary transition-colors">Login</a>
+<a href="country.html" class="hidden md:flex items-center px-6 py-2 rounded-full bg-secondary-container text-on-secondary-container font-label-md transition-transform active:scale-95">
+    Check Eligibility
+</a>
+<button class="p-2 transition-transform active:scale-90 md:hidden" data-menu-toggle>
+<span class="material-symbols-outlined text-on-surface">menu</span>
+</button>
+</div>
+</nav>
+</header>
+<main class="relative">
+<!-- Hero Section with Shader Background -->
+<section class="relative min-h-[90vh] flex items-center justify-center pt-16 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 w-full h-full opacity-60" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_3" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_3');
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+uniform float u_time;
+uniform vec2 u_resolution;
+
+varying vec2 v_texCoord;
+
+void main() {
+    vec2 uv = v_texCoord;
+    float noise1 = sin(uv.x * 3.0 + u_time * 0.2) * 0.5 + 0.5;
+    float noise2 = cos(uv.y * 2.5 - u_time * 0.15) * 0.5 + 0.5;
+    vec3 color1 = vec3(0.0, 0.35, 0.6);
+    vec3 color2 = vec3(0.98, 0.98, 1.0);
+    float mixFactor = smoothstep(0.3, 0.7, (uv.x + uv.y) * 0.5 + noise1 * 0.1 + noise2 * 0.1);
+    vec3 finalColor = mix(color1, color2, mixFactor);
+    float goldMix = smoothstep(0.8, 1.0, noise1 * noise2);
+    vec3 gold = vec3(1.0, 0.8, 0.0);
+    finalColor = mix(finalColor, gold, goldMix * 0.1);
+    gl_FragColor = vec4(finalColor, 0.15);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-background/40 to-background"></div>
+</div>
+<div class="relative z-10 w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
+<div class="fade-in-up">
+<span class="inline-block px-4 py-1.5 mb-6 rounded-full bg-primary-fixed text-on-primary-fixed font-label-md">
+    Official Admissions Partner
+</span>
+<h1 class="font-display-lg text-display-lg mb-6 max-w-3xl mx-auto leading-tight md:leading-[64px]">
+    Your Nordic Journey <br class="hidden md:block"/> <span class="text-primary">Starts Here</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto">
+    Instantly check your eligibility for Swedish universities and get a personalized path to success.
+</p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+<a href="country.html" class="w-full sm:w-auto px-10 py-4 bg-secondary-container text-on-secondary-container rounded-full font-headline-md shadow-lg shadow-secondary/20 hover:shadow-xl hover:-translate-y-0.5 transition-all active:scale-95 inline-block text-center">
+    Check My Eligibility
+</a>
+<a href="directory.html" class="w-full sm:w-auto px-10 py-4 border-2 border-outline-variant text-primary rounded-full font-headline-md hover:bg-surface-container transition-colors active:scale-95 inline-block text-center">
+    Browse Programs
+</a>
+</div>
+</div>
+<!-- Trust Stats Grid -->
+<div class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-gutter fade-in-up">
+<div class="glass-card p-8 rounded-[24px]">
+<div class="text-primary font-display-lg text-headline-lg mb-2">50+</div>
+<div class="text-on-surface-variant font-label-md">Universities</div>
+</div>
+<div class="glass-card p-8 rounded-[24px]">
+<div class="text-primary font-display-lg text-headline-lg mb-2">3000+</div>
+<div class="text-on-surface-variant font-label-md">Programs</div>
+</div>
+<div class="glass-card p-8 rounded-[24px]">
+<div class="text-secondary font-display-lg text-headline-lg mb-2">98%</div>
+<div class="text-on-surface-variant font-label-md">Accuracy</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid Feature Section -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="mb-16 fade-in-up">
+<h2 class="font-headline-lg text-headline-lg mb-4">A Smarter Way to Apply</h2>
+<p class="text-on-surface-variant max-w-xl">We've distilled the complex Swedish admission system into a simple, three-step automated checker.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[280px]">
+<!-- Large Feature Card -->
+<div class="md:col-span-8 bg-surface-container-highest rounded-[24px] overflow-hidden relative group fade-in-up shadow-sm">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDSxNvGRpMiscTtAgXVVENWwIHz_fd73KQB8xCpLdeeyxdgL40j8qy98glmKIR3Pqar_0g5fnwdXKsPdiV8Q9XDMlPIZSD2iJL5bBq2vSs4Ii-IYcf-VsQL4v8etp5BPOrl0hE_hVXc_w3AODgLt8X32LlqlSAp6GScf0VGUGRUNFweI8ebPknCviuvb8g9_JB1DslXve3uzpxIJ2wseq-AJ7gHANTpxBVpVREOKSWoOklRnMr2qQ')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-10 text-white">
+<h3 class="font-headline-md text-headline-md mb-2">Academic Compatibility Engine</h3>
+<p class="font-body-md opacity-90 max-w-md">Our algorithm analyzes your transcript against 3,000+ program requirements in seconds.</p>
+</div>
+</div>
+<!-- Small Feature Card -->
+<div class="md:col-span-4 bg-primary text-on-primary rounded-[24px] p-8 flex flex-col justify-between fade-in-up shadow-sm">
+<span class="material-symbols-outlined text-4xl">verified</span>
+<div>
+<h3 class="font-headline-md text-headline-md mb-2">Official Data</h3>
+<p class="font-body-md opacity-80">Direct integration with University Admissions Sweden for real-time accuracy.</p>
+</div>
+</div>
+<!-- Small Feature Card -->
+<div class="md:col-span-4 bg-secondary-container text-on-secondary-container rounded-[24px] p-8 flex flex-col justify-between fade-in-up shadow-sm">
+<span class="material-symbols-outlined text-4xl">timeline</span>
+<div>
+<h3 class="font-headline-md text-headline-md mb-2">Deadlines Map</h3>
+<p class="font-body-md opacity-80 text-on-secondary-fixed-variant">Never miss an intake with our personalized notification system.</p>
+</div>
+</div>
+<!-- Medium Feature Card -->
+<div class="md:col-span-8 bg-white border border-outline-variant rounded-[24px] p-10 flex flex-col md:flex-row items-center gap-8 fade-in-up shadow-sm">
+<div class="w-full md:w-1/2">
+<h3 class="font-headline-md text-headline-md mb-4 text-primary">Swedish Visa Support</h3>
+<p class="text-on-surface-variant font-body-md mb-6">Complete guidance on residence permits for studies, financial proof, and insurance requirements.</p>
+<a href="about.html" class="text-primary font-label-md flex items-center gap-2 group">
+    Learn More <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+<div class="w-full md:w-1/2 h-full rounded-xl overflow-hidden shadow-inner bg-surface-container-low">
+<div class="h-full w-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAT_rOGqbEpUW0pK56HrzI7xhnKdMhwIWRpod3ky9rrYgRXZc3HJ5AtrsH3ROnPznETP7RemQXFrgABAnJM0tYM3l0VV3DouMlewb9BodvTRtV6zBHvEvRIk_e0jzdXDwuZ4tXTryWqLJnuQVTT9BVr-4UmqFNflD8qqE7PJ_2EWZ_lqeO3-P5XN9TtEKYlsPhWO4NFfmvjF06ADuG6lnwZicz7ccJB0k24fzolood6arOyGj8qDQ')"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Checker Workflow Section -->
+<section class="py-24">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-16 fade-in-up">
+<h2 class="font-headline-lg text-headline-lg mb-4">How it Works</h2>
+<p class="text-on-surface-variant max-w-xl mx-auto">Three simple steps to unlock your future in Sweden.</p>
+</div>
+<div class="relative flex flex-col md:flex-row justify-between items-start gap-12">
+<div class="hidden md:block absolute top-8 left-[10%] right-[10%] h-0.5 bg-outline-variant z-0"></div>
+<a href="country.html" class="relative z-10 flex-1 text-center fade-in-up block group">
+<div class="w-16 h-16 bg-primary text-on-primary rounded-full flex items-center justify-center mx-auto mb-6 shadow-md border-4 border-white group-hover:scale-110 transition-transform">
+<span class="font-headline-md">1</span>
+</div>
+<h4 class="font-headline-md mb-2">Select Country</h4>
+<p class="text-on-surface-variant text-sm">Choose your country of previous education.</p>
+</a>
+<a href="study-level.html" class="relative z-10 flex-1 text-center fade-in-up block group" style="transition-delay: 100ms;">
+<div class="w-16 h-16 bg-secondary-container text-on-secondary-container rounded-full flex items-center justify-center mx-auto mb-6 shadow-md border-4 border-white group-hover:scale-110 transition-transform">
+<span class="font-headline-md">2</span>
+</div>
+<h4 class="font-headline-md mb-2">Select Level</h4>
+<p class="text-on-surface-variant text-sm">Pick Bachelor's, Master's, or PhD track.</p>
+</a>
+<a href="form.html" class="relative z-10 flex-1 text-center fade-in-up block group" style="transition-delay: 200ms;">
+<div class="w-16 h-16 bg-outline-variant text-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-md border-4 border-white group-hover:scale-110 transition-transform">
+<span class="font-headline-md">3</span>
+</div>
+<h4 class="font-headline-md mb-2">Input Data</h4>
+<p class="text-on-surface-variant text-sm">Enter your GPA and qualification details.</p>
+</a>
+</div>
+</div>
+</section>
+<!-- CTA Final Section -->
+<section class="py-24 bg-primary text-on-primary overflow-hidden relative">
+<div class="max-w-container-max mx-auto px-margin-mobile text-center relative z-10 fade-in-up">
+<h2 class="font-display-lg text-display-lg mb-8">Ready to define your future?</h2>
+<p class="text-primary-fixed font-body-lg mb-10 max-w-xl mx-auto opacity-90">Start your assessment today and join 15,000+ international students currently studying in Sweden.</p>
+<a href="country.html" class="inline-block px-12 py-5 bg-secondary-container text-on-secondary-container rounded-full font-headline-md transition-all hover:scale-105 active:scale-95 shadow-xl shadow-black/20">
+    Get Started Now
+</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-lowest w-full mt-auto border-t border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center py-10 px-margin-mobile md:px-margin-desktop w-full max-w-container-max mx-auto">
+<div class="flex flex-col items-center md:items-start mb-8 md:mb-0">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary text-2xl">school</span>
+<span class="font-headline-md text-primary">EduSweden</span>
+</div>
+<p class="text-on-surface-variant text-sm max-w-xs text-center md:text-left">
+    © 2024 EduSweden. Scandinavian Excellence in Admissions.
+</p>
+</div>
+<div class="flex flex-wrap justify-center gap-6 mb-8 md:mb-0">
+<a class="text-on-surface-variant font-body-md hover:text-secondary hover:underline underline-offset-4 transition-colors" href="index.html">Home</a>
+<a class="text-on-surface-variant font-body-md hover:text-secondary hover:underline underline-offset-4 transition-colors" href="about.html">About</a>
+<a class="text-on-surface-variant font-body-md hover:text-secondary hover:underline underline-offset-4 transition-colors" href="directory.html">Directory</a>
+<a class="text-on-surface-variant font-body-md hover:text-secondary hover:underline underline-offset-4 transition-colors" href="consultation.html">Consultation</a>
+<a class="text-on-surface-variant font-body-md hover:text-secondary hover:underline underline-offset-4 transition-colors" href="faq.html">FAQ</a>
+</div>
+</div>
+</footer>
+</body>
+</html>
