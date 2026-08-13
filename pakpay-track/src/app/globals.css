@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Inter:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@config "../../tailwind.config.ts";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-surface: #0e1321;
+  --color-surface-dim: #0e1321;
+  --color-surface-bright: #343948;
+  --color-surface-container-lowest: #090e1c;
+  --color-surface-container-low: #161b2a;
+  --color-surface-container: #1a1f2e;
+  --color-surface-container-high: #252a39;
+  --color-surface-container-highest: #303444;
+  --color-on-surface: #dee2f6;
+  --color-on-surface-variant: #bbcabf;
+  --color-inverse-surface: #dee2f6;
+  --color-inverse-on-surface: #2b303f;
+  --color-outline: #86948a;
+  --color-outline-variant: #3c4a42;
+  --color-surface-tint: #4edea3;
+  --color-primary: #4edea3;
+  --color-on-primary: #003824;
+  --color-primary-container: #10b981;
+  --color-on-primary-container: #00422b;
+  --color-inverse-primary: #006c49;
+  --color-secondary: #5de6ff;
+  --color-on-secondary: #00363e;
+  --color-secondary-container: #00cbe6;
+  --color-on-secondary-container: #00515d;
+  --color-tertiary: #ffafd3;
+  --color-on-tertiary: #620040;
+  --color-tertiary-container: #f876ba;
+  --color-on-tertiary-container: #72004b;
+  --color-error: #ffb4ab;
+  --color-on-error: #690005;
+  --color-error-container: #93000a;
+  --color-on-error-container: #ffdad6;
+  --color-primary-fixed: #6ffbbe;
+  --color-primary-fixed-dim: #4edea3;
+  --color-on-primary-fixed: #002113;
+  --color-on-primary-fixed-variant: #005236;
+  --color-secondary-fixed: #a2eeff;
+  --color-secondary-fixed-dim: #2fd9f4;
+  --color-on-secondary-fixed: #001f25;
+  --color-on-secondary-fixed-variant: #004e5a;
+  --color-tertiary-fixed: #ffd8e7;
+  --color-tertiary-fixed-dim: #ffafd3;
+  --color-on-tertiary-fixed: #3d0026;
+  --color-on-tertiary-fixed-variant: #85145a;
+  --color-background: #0e1321;
+  --color-on-background: #dee2f6;
+  --color-surface-variant: #303444;
+
+  --spacing-gutter: 1.5rem;
+  --spacing-container-padding-desktop: 2.5rem;
+  --spacing-stack-md: 1rem;
+  --spacing-container-padding-mobile: 1.25rem;
+  --spacing-unit: 4px;
+  --spacing-stack-sm: 0.5rem;
+  --spacing-stack-lg: 2rem;
+
+  --font-headline-lg: Outfit, sans-serif;
+  --font-body-md: Inter, sans-serif;
+  --font-display-lg: Outfit, sans-serif;
+  --font-headline-lg-mobile: Outfit, sans-serif;
+  --font-title-md: Outfit, sans-serif;
+  --font-label-sm: Inter, sans-serif;
+  --font-body-lg: Inter, sans-serif;
+}
+
+:root {
+  --background: #0e1321;
+  --foreground: #dee2f6;
+  --card: #1a1f2e;
+  --card-foreground: #dee2f6;
+  --popover: #1a1f2e;
+  --popover-foreground: #dee2f6;
+  --primary: #4edea3;
+  --primary-foreground: #003824;
+  --secondary: #5de6ff;
+  --secondary-foreground: #00363e;
+  --muted: #303444;
+  --muted-foreground: #bbcabf;
+  --accent: #252a39;
+  --accent-foreground: #dee2f6;
+  --destructive: #ffb4ab;
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.1);
+  --ring: #4edea3;
+  --radius: 1rem;
+}
+
+.glass-panel {
+  background: rgba(37, 42, 57, 0.4);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.hero-glow {
+  text-shadow: 0 0 40px rgba(78, 222, 163, 0.4);
+}
+
+.animate-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.btn-glow {
+  transition: all 0.3s ease;
+}
+.btn-glow:hover {
+  box-shadow: 0 0 20px rgba(78, 222, 163, 0.6);
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-on-background);
+    font-family: 'Inter', sans-serif;
+  }
+}

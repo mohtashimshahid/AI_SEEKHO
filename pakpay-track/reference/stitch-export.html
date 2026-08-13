@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PakPay Track - The Future of Freelance Wealth</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary": "#5de6ff",
+                        "on-tertiary-fixed": "#3d0026",
+                        "on-secondary-fixed": "#001f25",
+                        "primary": "#4edea3",
+                        "on-surface-variant": "#bbcabf",
+                        "inverse-primary": "#006c49",
+                        "surface": "#0e1321",
+                        "surface-tint": "#4edea3",
+                        "on-surface": "#dee2f6",
+                        "surface-container-highest": "#303444",
+                        "surface-container-high": "#252a39",
+                        "on-primary-fixed-variant": "#005236",
+                        "on-primary": "#003824",
+                        "primary-fixed-dim": "#4edea3",
+                        "on-primary-fixed": "#002113",
+                        "on-background": "#dee2f6",
+                        "tertiary-fixed-dim": "#ffafd3",
+                        "error": "#ffb4ab",
+                        "on-primary-container": "#00422b",
+                        "surface-container-lowest": "#090e1c",
+                        "background": "#0e1321",
+                        "tertiary-container": "#f876ba",
+                        "surface-bright": "#343948",
+                        "on-tertiary": "#620040",
+                        "secondary-fixed": "#a2eeff",
+                        "inverse-on-surface": "#2b303f",
+                        "secondary-container": "#00cbe6",
+                        "on-tertiary-fixed-variant": "#85145a",
+                        "error-container": "#93000a",
+                        "primary-container": "#10b981",
+                        "on-secondary": "#00363e",
+                        "on-error-container": "#ffdad6",
+                        "outline": "#86948a",
+                        "primary-fixed": "#6ffbbe",
+                        "surface-dim": "#0e1321",
+                        "tertiary": "#ffafd3",
+                        "outline-variant": "#3c4a42",
+                        "surface-container-low": "#161b2a",
+                        "tertiary-fixed": "#ffd8e7",
+                        "secondary-fixed-dim": "#2fd9f4",
+                        "inverse-surface": "#dee2f6",
+                        "on-secondary-fixed-variant": "#004e5a",
+                        "surface-variant": "#303444",
+                        "on-tertiary-container": "#72004b",
+                        "on-error": "#690005",
+                        "on-secondary-container": "#00515d",
+                        "surface-container": "#1a1f2e"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        "gutter": "1.5rem",
+                        "container-padding-desktop": "2.5rem",
+                        "stack-md": "1rem",
+                        "container-padding-mobile": "1.25rem",
+                        "unit": "4px",
+                        "stack-sm": "0.5rem",
+                        "stack-lg": "2rem"
+                    },
+                    fontFamily: {
+                        "headline-lg": ["Outfit"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Outfit"],
+                        "headline-lg-mobile": ["Outfit"],
+                        "title-md": ["Outfit"],
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    fontSize: {
+                        "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "600" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "display-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "headline-lg-mobile": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+                        "title-md": ["20px", { lineHeight: "28px", fontWeight: "500" }],
+                        "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(37, 42, 57, 0.4);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+        
+        .hero-glow {
+            text-shadow: 0 0 40px rgba(78, 222, 163, 0.4);
+        }
+
+        .animate-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .animate-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .btn-glow {
+            transition: all 0.3s ease;
+        }
+        .btn-glow:hover {
+            box-shadow: 0 0 20px rgba(78, 222, 163, 0.6);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen relative overflow-x-hidden">
+<!-- Global Background Shader -->
+<div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
+<!-- STITCH_SHADER_START:ANIMATION_8 class="absolute inset-0 w-full h-full opacity-60" -->
+<div class="absolute inset-0 w-full h-full opacity-60" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_8" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_8');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+varying vec2 v_texCoord;
+uniform float u_time;
+uniform vec2 u_resolution;
+
+void main() {
+    vec2 uv = v_texCoord;
+    
+    // Scale UV for pattern density
+    vec2 p = (uv * 2.0 - 1.0) * 1.5;
+    p.x *= u_resolution.x / u_resolution.y;
+
+    // Liquid distortion
+    for(int i = 1; i < 6; i++) {
+        float f = float(i);
+        p.x += 0.2 / f * sin(f * p.y + u_time * 0.4 + 0.3 * f);
+        p.y += 0.2 / f * sin(f * p.x + u_time * 0.3 + 0.5 * f);
+    }
+
+    // Color palette from PakPay Track design system
+    // Primary Emerald: #10B981 -> vec3(0.06, 0.72, 0.50)
+    // Deep Midnight: #0A0F1D -> vec3(0.04, 0.06, 0.11)
+    
+    vec3 color1 = vec3(0.04, 0.06, 0.11); // Deep background
+    vec3 color2 = vec3(0.06, 0.72, 0.50); // Emerald accent
+    vec3 color3 = vec3(0.02, 0.45, 0.52); // Cyan highlights
+
+    float mask = sin(p.x + p.y) * 0.5 + 0.5;
+    vec3 color = mix(color1, color2, mask * 0.3);
+    color = mix(color, color3, pow(mask, 4.0) * 0.2);
+    
+    // Add a subtle vignette and edge glow
+    float dist = length(uv - 0.5);
+    color *= (1.2 - dist * 0.8);
+    color += color2 * (0.05 / dist) * mask;
+
+    gl_FragColor = vec4(color, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_8 -->
+<div class="absolute inset-0 bg-gradient-to-b from-surface/40 via-surface/80 to-background"></div>
+</div>
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/10 dark:bg-surface/10 backdrop-blur-md border-b border-white/10 shadow-[0_0_20px_rgba(78,222,163,0.05)]">
+<div class="flex justify-between items-center w-full px-container-padding-mobile md:px-container-padding-desktop py-4 max-w-[1440px] mx-auto">
+<div class="flex items-center gap-4">
+<span class="text-title-md font-title-md font-bold text-primary dark:text-primary tracking-tight">PakPay Track</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-body-md font-body-md text-on-surface hover:text-primary transition-colors" href="#">Features</a>
+<a class="text-body-md font-body-md text-on-surface hover:text-primary transition-colors" href="#">Pricing</a>
+<a class="text-body-md font-body-md text-on-surface hover:text-primary transition-colors" href="#">Resources</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden md:block px-6 py-2 rounded-xl text-body-md font-body-md text-on-surface border border-white/10 hover:bg-surface-container-high transition-colors">Log In</button>
+<button class="px-6 py-2 rounded-xl bg-primary text-on-primary font-body-md text-body-md btn-glow font-semibold">Get Started</button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-container-padding-mobile md:px-container-padding-desktop max-w-[1440px] mx-auto">
+<!-- Hero Section -->
+<section class="min-h-[80vh] flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-24 mb-stack-lg">
+<div class="flex-1 z-10 max-w-2xl text-center lg:text-left animate-up">
+<div class="inline-block px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-label-sm font-label-sm mb-6 uppercase tracking-widest backdrop-blur-sm">
+                    Revolutionizing Finance
+                </div>
+<h1 class="text-display-lg font-display-lg md:text-[64px] md:leading-[72px] text-white hero-glow mb-6">
+                    The Future of Freelance Wealth in Pakistan.
+                </h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant mb-10 max-w-xl mx-auto lg:mx-0">
+                    Extreme speed. Total transparency. 4K-clarity tracking for the modern remote professional. Experience banking redesigned for high-performance earners.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+<button class="px-8 py-4 rounded-xl bg-primary text-on-primary font-body-lg text-body-lg font-semibold btn-glow shadow-[0_0_30px_rgba(78,222,163,0.3)]">
+                        Scale Your Business
+                    </button>
+<button class="px-8 py-4 rounded-xl glass-panel text-white font-body-lg text-body-lg hover:bg-white/5 transition-colors border border-white/20">
+                        Experience the Demo
+                    </button>
+</div>
+</div>
+<div class="flex-1 w-full max-w-lg lg:max-w-none relative animate-up" style="transition-delay: 0.2s;">
+<div class="aspect-square relative rounded-2xl overflow-hidden glass-panel flex items-center justify-center p-8">
+<!-- 3D Scene embedded here -->
+<!-- STITCH_THREEJS_START:ANIMATION_9 class="absolute inset-0 w-full h-full object-cover" -->
+<div class="absolute inset-0 w-full h-full object-cover" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_9" style="width:100%;height:100%"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_9');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  const width = container.clientWidth || window.innerWidth;
+const height = container.clientHeight || window.innerHeight;
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, powerPreference: "high-performance" });
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.setSize(width, height);
+container.appendChild(renderer.domElement);
+
+// Group for the data crystals
+const crystalGroup = new THREE.Group();
+scene.add(crystalGroup);
+
+// Materials
+const glassMat = new THREE.MeshPhysicalMaterial({
+    color: 0x10B981,
+    metalness: 0.2,
+    roughness: 0.1,
+    transmission: 0.9,
+    thickness: 1.5,
+    ior: 1.5,
+    transparent: true,
+    opacity: 0.6,
+    envMapIntensity: 2,
+    clearcoat: 1.0
+});
+
+const glowMat = new THREE.MeshStandardMaterial({
+    color: 0x10B981,
+    emissive: 0x10B981,
+    emissiveIntensity: 2,
+    transparent: true,
+    opacity: 0.8
+});
+
+// Create central 'Growth Core'
+const coreGeom = new THREE.IcosahedronGeometry(1.2, 1);
+const core = new THREE.Mesh(coreGeom, glassMat);
+crystalGroup.add(core);
+
+// Add a wireframe glow around the core
+const coreWire = new THREE.Mesh(coreGeom, new THREE.MeshBasicMaterial({ color: 0x10B981, wireframe: true, transparent: true, opacity: 0.3 }));
+coreWire.scale.set(1.05, 1.05, 1.05);
+core.add(coreWire);
+
+// Orbital financial data points (spheres and crystals)
+const particles = [];
+const particleCount = 40;
+
+for (let i = 0; i < particleCount; i++) {
+    const size = Math.random() * 0.1 + 0.02;
+    const geom = Math.random() > 0.5 ? new THREE.SphereGeometry(size, 8, 8) : new THREE.BoxGeometry(size, size, size);
+    const mat = Math.random() > 0.7 ? glowMat.clone() : glassMat.clone();
+    
+    const p = new THREE.Mesh(geom, mat);
+    
+    p.userData = {
+        angle: Math.random() * Math.PI * 2,
+        radius: 2 + Math.random() * 3,
+        speed: 0.005 + Math.random() * 0.01,
+        yAmplitude: Math.random() * 1.5,
+        yPhase: Math.random() * Math.PI * 2
+    };
+    
+    scene.add(p);
+    particles.push(p);
+}
+
+// Lighting for "4K Realistic" feel
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
+scene.add(ambientLight);
+
+const mainLight = new THREE.PointLight(0x10B981, 5, 20);
+mainLight.position.set(5, 5, 5);
+scene.add(mainLight);
+
+const secondaryLight = new THREE.PointLight(0x06b6d4, 3, 15);
+secondaryLight.position.set(-5, -5, 2);
+scene.add(secondaryLight);
+
+camera.position.z = 7;
+
+// Animation
+function animate() {
+    requestAnimationFrame(animate);
+    const time = Date.now() * 0.001;
+
+    crystalGroup.rotation.y += 0.005;
+    crystalGroup.rotation.x += 0.003;
+    core.position.y = Math.sin(time * 0.5) * 0.2;
+
+    particles.forEach(p => {
+        p.userData.angle += p.userData.speed;
+        p.position.x = Math.cos(p.userData.angle) * p.userData.radius;
+        p.position.z = Math.sin(p.userData.angle) * p.userData.radius;
+        p.position.y = Math.sin(time + p.userData.yPhase) * p.userData.yAmplitude;
+        p.rotation.x += 0.02;
+        p.rotation.y += 0.01;
+    });
+
+    renderer.render(scene, camera);
+}
+
+window.addEventListener('resize', () => {
+    const w = container.clientWidth || window.innerWidth;
+    const h = container.clientHeight || window.innerHeight;
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w, h);
+});
+
+animate();
+})();
+</script>
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_9 -->
+<!-- Decorative HUD elements floating over 3D scene -->
+<div class="absolute top-8 left-8 glass-panel px-4 py-2 rounded-lg border-primary/30 text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span class="text-label-sm font-label-sm">+42.8% Growth</span>
+</div>
+<div class="absolute bottom-8 right-8 glass-panel px-4 py-2 rounded-lg border-secondary/30 text-secondary flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">sync</span>
+<span class="text-label-sm font-label-sm">Syncing Data...</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Features Bento Grid -->
+<section class="py-24">
+<div class="text-center mb-16 animate-up">
+<h2 class="text-headline-lg font-headline-lg text-white mb-4">Pro-Level Financial Tooling</h2>
+<p class="text-body-md font-body-md text-on-surface-variant max-w-2xl mx-auto">Engineered specifically for the nuances of cross-border payments, tax compliance, and automated invoicing.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[minmax(320px,auto)]">
+<!-- Feature 1: Wide Card -->
+<div class="md:col-span-8 glass-panel rounded-3xl p-8 relative overflow-hidden group hover:border-primary/50 transition-colors duration-500 animate-up">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+<div class="relative z-10 h-full flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mb-6 border border-primary/30">
+<span class="material-symbols-outlined text-primary">currency_exchange</span>
+</div>
+<h3 class="text-title-md font-title-md text-white mb-3">Instant Cross-Border Settlement</h3>
+<p class="text-body-md font-body-md text-on-surface-variant max-w-md">Receive payments from international clients in seconds, converted at real mid-market rates without hidden spread fees.</p>
+</div>
+<div class="mt-8">
+<div class="w-full h-32 rounded-xl bg-surface-container/50 border border-white/5 relative overflow-hidden flex items-end">
+<!-- Abstract chart representation -->
+<div class="w-full h-full flex items-end gap-2 p-4 opacity-70">
+<div class="w-1/6 bg-primary/40 rounded-t-sm h-1/3"></div>
+<div class="w-1/6 bg-primary/60 rounded-t-sm h-1/2"></div>
+<div class="w-1/6 bg-primary/80 rounded-t-sm h-3/4"></div>
+<div class="w-1/6 bg-primary rounded-t-sm h-full"></div>
+<div class="w-1/6 bg-secondary/80 rounded-t-sm h-4/5"></div>
+<div class="w-1/6 bg-secondary/50 rounded-t-sm h-2/3"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Feature 2: Tall Card -->
+<div class="md:col-span-4 glass-panel rounded-3xl p-8 relative overflow-hidden group hover:border-secondary/50 transition-colors duration-500 animate-up" style="transition-delay: 0.1s;">
+<div class="absolute inset-0 bg-gradient-to-br from-secondary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+<div class="relative z-10 h-full flex flex-col">
+<div class="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center mb-6 border border-secondary/30">
+<span class="material-symbols-outlined text-secondary">receipt_long</span>
+</div>
+<h3 class="text-title-md font-title-md text-white mb-3">Automated Invoicing</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mb-8 flex-1">Smart contracts that automatically generate, send, and reconcile invoices upon project milestones.</p>
+<div class="space-y-3">
+<div class="bg-surface-container-highest p-4 rounded-xl border border-white/5 flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<span class="text-label-sm font-label-sm text-on-surface">Inv #4092 Paid</span>
+<span class="text-label-sm font-label-sm text-primary ml-auto">+$1,250</span>
+</div>
+<div class="bg-surface-container-highest p-4 rounded-xl border border-white/5 flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+<span class="text-label-sm font-label-sm text-on-surface">Inv #4093 Sent</span>
+<span class="text-label-sm font-label-sm text-secondary ml-auto">Pending</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Feature 3: Small Card -->
+<div class="md:col-span-4 glass-panel rounded-3xl p-8 relative overflow-hidden group hover:border-tertiary/50 transition-colors duration-500 animate-up">
+<div class="absolute inset-0 bg-gradient-to-br from-tertiary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+<div class="w-12 h-12 rounded-full bg-tertiary/20 flex items-center justify-center mb-6 border border-tertiary/30">
+<span class="material-symbols-outlined text-tertiary">shield_person</span>
+</div>
+<h3 class="text-title-md font-title-md text-white mb-3">Tax Compliance Engine</h3>
+<p class="text-body-md font-body-md text-on-surface-variant">Real-time tax calculation and automated holding accounts customized for Pakistani freelancers.</p>
+</div>
+<!-- Feature 4: Wide Card -->
+<div class="md:col-span-8 glass-panel rounded-3xl p-8 relative overflow-hidden group hover:border-primary/50 transition-colors duration-500 animate-up" style="transition-delay: 0.1s;">
+<div class="absolute inset-0 bg-gradient-to-bl from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+<div class="relative z-10 flex flex-col md:flex-row gap-8 items-center h-full">
+<div class="flex-1">
+<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mb-6 border border-primary/30">
+<span class="material-symbols-outlined text-primary">donut_large</span>
+</div>
+<h3 class="text-title-md font-title-md text-white mb-3">Deep Portfolio Analytics</h3>
+<p class="text-body-md font-body-md text-on-surface-variant">Visualize your income streams, client concentration risk, and cash flow projections in stunning 4K detail.</p>
+</div>
+<div class="flex-1 w-full max-w-[200px] aspect-square rounded-full border-4 border-surface-container-highest relative flex items-center justify-center">
+<div class="absolute inset-0 border-4 border-primary rounded-full border-t-transparent rotate-45"></div>
+<div class="absolute inset-2 border-4 border-secondary rounded-full border-b-transparent -rotate-12"></div>
+<span class="text-headline-lg font-headline-lg text-white">94%</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="relative w-full mt-auto bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-white/5">
+<div class="flex flex-col md:flex-row justify-between items-center px-container-padding-desktop py-stack-lg w-full max-w-7xl mx-auto gap-6 text-center md:text-left">
+<div>
+<span class="text-title-md font-title-md font-bold text-primary">PakPay Track</span>
+<p class="text-body-md font-body-md text-on-surface-variant mt-2">© 2024 PakPay Track. Regulated by SECP &amp; SBP Partners.</p>
+</div>
+<div class="flex flex-wrap justify-center md:justify-end gap-6">
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100" href="#">Help Center</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100" href="#">Tax Guide PK</a>
+</div>
+</div>
+</footer>
+<!-- Simple Intersection Observer for scroll animations -->
+<script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('.animate-up').forEach((el) => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body></html>
