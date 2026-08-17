@@ -1,6 +1,9 @@
 import os
 from pydantic_settings import BaseSettings
-from typing import List, Union, Any
+from typing import List
+
+is_vercel = os.getenv("VERCEL") == "1" or os.getenv("VERCEL_ENV") is not None
+default_db = "sqlite+aiosqlite:////tmp/cursus_timetable.db" if is_vercel else "sqlite+aiosqlite:///./cursus_timetable.db"
 
 class Settings(BaseSettings):
     PROJECT_NAME: str = "Cursus Timetable Builder"
@@ -11,16 +14,14 @@ class Settings(BaseSettings):
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 15 # Short-lived access tokens (§11.3)
     REFRESH_TOKEN_EXPIRE_DAYS: int = 7
 
-    DATABASE_URL: str = os.getenv(
-        "DATABASE_URL",
-        "sqlite+aiosqlite:///./cursus_timetable.db"
-    )
+    DATABASE_URL: str = os.getenv("DATABASE_URL", default_db)
 
     ALLOWED_ORIGINS: List[str] = [
         "http://localhost:3000",
         "http://127.0.0.1:3000",
         "http://localhost:8000",
-        "http://127.0.0.1:8000"
+        "http://127.0.0.1:8000",
+        "https://*.vercel.app"
     ]
 
     class Config:

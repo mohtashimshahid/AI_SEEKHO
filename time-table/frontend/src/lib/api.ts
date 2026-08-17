@@ -1,4 +1,13 @@
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api/v1";
+const getApiBaseUrl = () => {
+  if (process.env.NEXT_PUBLIC_API_URL) {
+    return process.env.NEXT_PUBLIC_API_URL;
+  }
+  if (typeof window !== "undefined") {
+    // In browser, if no explicit API URL set, default to relative /api/v1
+    return "/api/v1";
+  }
+  return "http://127.0.0.1:8000/api/v1";
+};
 
 export async function fetchApi<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
   const defaultHeaders: Record<string, string> = {
@@ -14,7 +23,10 @@ export async function fetchApi<T>(endpoint: string, options: RequestInit = {}): 
     credentials: "include", // Send HttpOnly cookies (§11.1)
   };
 
-  const response = await fetch(`${API_BASE_URL}${endpoint}`, config);
+  const apiBase = getApiBaseUrl();
+  const url = endpoint.startsWith("http") ? endpoint : `${apiBase}${endpoint.startsWith("/") ? "" : "/"}${endpoint}`;
+
+  const response = await fetch(url, config);
 
   if (!response.ok) {
     let errorMessage = "An error occurred";
