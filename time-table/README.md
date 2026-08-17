@@ -5,6 +5,8 @@
 ![Next.js 14](https://img.shields.io/badge/Frontend-Next.js_14-black?style=for-the-badge&logo=next.js)
 ![Tailwind CSS](https://img.shields.io/badge/Theme-Dark_Academia-16221b?style=for-the-badge)
 
+> **Localhost Application Link:** [http://localhost:3000](http://localhost:3000)  
+> **Localhost Backend API Docs:** [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)  
 > **Live Vercel Deployment Link:** [https://cursus-timetable-builder.vercel.app](https://cursus-timetable-builder.vercel.app)  
 > **GitHub Repository:** [https://github.com/mohtashimshahid/AI_SEEKHO](https://github.com/mohtashimshahid/AI_SEEKHO)
 
@@ -90,7 +92,8 @@ pip install -r requirements.txt
 python scripts/seed_database.py
 uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload
 ```
-- API Docs (Swagger UI): `http://127.0.0.1:8000/docs`
+- Localhost API Docs (Swagger UI): [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+- Localhost Health Check: [http://127.0.0.1:8000/health](http://127.0.0.1:8000/health)
 
 ### 2. Frontend Application (Next.js 14)
 ```powershell
@@ -98,7 +101,7 @@ cd frontend
 npm install
 npm run dev
 ```
-- Web Application: `http://localhost:3000`
+- Localhost Web Application: [http://localhost:3000](http://localhost:3000)
 
 ### 3. Run Backend Test Suite
 ```powershell
