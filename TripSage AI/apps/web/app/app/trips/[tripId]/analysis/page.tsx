@@ -269,7 +269,30 @@ export default function AnalysisScreen() {
         });
 
         es.onerror = () => {
-          // SSE connection closed or completed
+          // Check backend status if SSE disconnects
+          apiClient<any>(`/workflows/${activeRunId}`)
+            .then((wf) => {
+              if (wf?.data?.status === "COMPLETED") {
+                setIsCompleted(true);
+              }
+            })
+            .catch(() => {});
+        };
+
+        // Fallback polling interval to guarantee completion state synchronization
+        const pollInterval = setInterval(async () => {
+          if (!active) return;
+          try {
+            const wf = await apiClient<any>(`/workflows/${activeRunId}`);
+            if (wf?.data?.status === "COMPLETED") {
+              setIsCompleted(true);
+              clearInterval(pollInterval);
+            }
+          } catch (e) {}
+        }, 2000);
+
+        return () => {
+          clearInterval(pollInterval);
         };
       } catch (err: any) {
         if (active) setError(err.message || "Failed to establish real-time agent stream");
