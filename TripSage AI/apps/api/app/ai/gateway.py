@@ -70,20 +70,39 @@ class OpenAIGateway:
         """
         schema_name = schema.__name__
 
+        # Dynamically extract destination from prompt context if present
+        dest = "Istanbul, Turkey"
+        if "Destination:" in prompt_context:
+            try:
+                line = [l for l in prompt_context.splitlines() if "Destination:" in l][0]
+                extracted = line.split("Destination:")[-1].strip().split("}")[0].strip('" ,')
+                if extracted:
+                    dest = extracted
+            except Exception:
+                pass
+        elif '"destination":' in prompt_context:
+            try:
+                line = [l for l in prompt_context.splitlines() if '"destination":' in l][0]
+                extracted = line.split('"destination":')[-1].strip().strip('" ,')
+                if extracted:
+                    dest = extracted
+            except Exception:
+                pass
+
         if schema_name == "DestinationResearch":
             mock_data = {
-                "destination": "Istanbul, Turkey",
-                "overview": "A mesmerizing bridge between Europe and Asia, rich with historic architecture, lively bazaars, and scenic waterways.",
-                "weather": ["Mild autumn temperatures (16-22°C)", "Pleasant breezes along the Bosphorus"],
-                "culture": ["Traditional Turkish hospitality", "Tea and coffee ceremonies", "Modest attire in mosques"],
-                "attractions": ["Hagia Sophia", "Topkapi Palace", "Basilica Cistern", "Galata Tower", "Grand Bazaar"],
-                "transportation": ["T1 Tram for historic sites", "Bosphorus public ferries", "Istanbulkart transit card"],
-                "best_areas": ["Sultanahmet (Historic)", "Beyoğlu / Galata (Cafes & Nightlife)", "Kadiköy (Food markets)"],
-                "seasonal_notes": ["Autumn is ideal with fewer crowds and vibrant cultural festivals."],
+                "destination": dest,
+                "overview": f"A vibrant and culturally rich destination offering iconic landmarks, local gastronomy, and scenic neighborhoods across {dest}.",
+                "weather": ["Pleasant seasonal temperatures (18-24°C)", "Ideal walking and sightseeing climate"],
+                "culture": ["Traditional local hospitality", "Rich culinary heritage", "Vibrant community customs"],
+                "attractions": [f"Historic Landmarks of {dest}", f"Central Plaza & Heritage District of {dest}", f"Iconic Waterfront & Scenic Viewpoint of {dest}"],
+                "transportation": ["Local light rail & subway network", "Scenic ferries and regional transit", "Walkable historic corridors"],
+                "best_areas": ["Historic Core", "Arts & Dining District", "Waterfront Promenade"],
+                "seasonal_notes": ["Pleasant travel window with excellent cultural activities and sights."],
                 "sources": [
                     {
-                        "title": "Lonely Planet Istanbul Guide",
-                        "url": "https://www.lonelyplanet.com/turkey/istanbul",
+                        "title": f"TripSage Travel Guide: {dest}",
+                        "url": f"https://www.lonelyplanet.com/search?q={dest.replace(' ', '+')}",
                         "domain": "lonelyplanet.com",
                         "source_type": "WEB",
                         "confidence": "HIGH",
@@ -219,9 +238,9 @@ class OpenAIGateway:
 
         if schema_name == "FinalItinerary":
             mock_data = {
-                "trip_summary": "A 7-day immersive journey through Istanbul blending Sultanahmet's Byzantine and Ottoman treasures with vibrant contemporary dining in Galata and Kadiköy.",
-                "destination": "Istanbul, Turkey",
-                "accommodation": "The Galata Heritage Boutique Hotel (Beyoğlu)",
+                "trip_summary": f"A curated immersive journey through {dest} blending heritage treasures with vibrant contemporary dining and cultural highlights.",
+                "destination": dest,
+                "accommodation": f"Heritage Boutique Hotel ({dest})",
                 "transportation": [
                     "Istanbulkart for seamless tram and metro transit",
                     "Public ferries for scenic transcontinental crossing",

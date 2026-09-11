@@ -7,6 +7,7 @@ from app.models.user import User
 from app.schemas.trip import TripCreate, TripListResponse, TripRequest, TripResponse, TripUpdate
 from app.services.auth_service import get_current_user
 from app.services.trip_service import TripService
+from app.services.workflow_service import WorkflowService
 
 router = APIRouter(prefix="/trips", tags=["trips"])
 
@@ -81,15 +82,12 @@ async def start_analysis(
     current_user: User = Depends(get_current_user),
     db: AsyncSession = Depends(get_db),
 ):
-    service = TripService(db)
-    trip = await service.get_trip(trip_id, current_user.id)
+    workflow_service = WorkflowService(db)
+    result = await workflow_service.execute_trip_analysis(trip_id, current_user.id)
     return {
-        "data": {
-            "trip_id": trip.id,
-            "status": "QUEUED",
-            "message": "Trip analysis queued successfully for multi-agent synthesis.",
-        },
+        "data": result,
         "meta": {
-            "trip_title": trip.title,
-        }
+            "trip_id": trip_id,
+            "status": result["status"],
+        },
     }

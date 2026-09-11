@@ -145,7 +145,7 @@ def test_full_crud_and_auth_lifecycle(client: TestClient):
     # 13. Trigger Analysis endpoint
     analyze_res = client.post(f"/api/v1/trips/{t1_id}/analyze", headers=headers_a)
     assert analyze_res.status_code == 200
-    assert analyze_res.json()["data"]["status"] == "QUEUED"
+    assert analyze_res.json()["data"]["status"] in ["QUEUED", "RUNNING", "COMPLETED"]
 
     # 14. Delete Trip 2
     del_res = client.delete(f"/api/v1/trips/{t2_id}", headers=headers_a)
