@@ -1,37 +1,95 @@
-from fastapi import APIRouter, Depends, HTTPException, status
+from typing import Optional
+from fastapi import APIRouter, Depends, HTTPException, Query, status
 from sqlalchemy.ext.asyncio import AsyncSession
+
 from app.db.session import get_db
 from app.models.user import User
+from app.schemas.trip import TripCreate, TripListResponse, TripRequest, TripResponse, TripUpdate
 from app.services.auth_service import get_current_user
+from app.services.trip_service import TripService
 
 router = APIRouter(prefix="/trips", tags=["trips"])
 
 
-@router.get("")
-async def list_trips(current_user: User = Depends(get_current_user), db: AsyncSession = Depends(get_db)):
-    return {"data": [], "meta": {"count": 0}}
+@router.post("", response_model=TripResponse, status_code=status.HTTP_201_CREATED)
+async def create_trip(
+    payload: TripCreate,
+    current_user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    service = TripService(db)
+    trip = await service.create_trip(current_user.id, payload)
+    return trip
 
 
-@router.post("", status_code=status.HTTP_201_CREATED)
-async def create_trip(payload: dict, current_user: User = Depends(get_current_user), db: AsyncSession = Depends(get_db)):
-    return {"data": {"message": "Trip created stub", "payload": payload}}
+@router.get("", response_model=TripListResponse)
+async def list_trips(
+    skip: int = Query(0, ge=0),
+    limit: int = Query(50, ge=1, le=100),
+    current_user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    service = TripService(db)
+    trips, total = await service.list_trips(current_user.id, skip=skip, limit=limit)
+    return {
+        "data": trips,
+        "meta": {
+            "total": total,
+            "skip": skip,
+            "limit": limit,
+        },
+    }
 
 
-@router.get("/{trip_id}")
-async def get_trip(trip_id: str, current_user: User = Depends(get_current_user), db: AsyncSession = Depends(get_db)):
-    return {"data": {"id": trip_id, "status": "DRAFT"}}
+@router.get("/{trip_id}", response_model=TripResponse)
+async def get_trip(
+    trip_id: str,
+    current_user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    service = TripService(db)
+    trip = await service.get_trip(trip_id, current_user.id)
+    return trip
 
 
-@router.patch("/{trip_id}")
-async def update_trip(trip_id: str, payload: dict, current_user: User = Depends(get_current_user), db: AsyncSession = Depends(get_db)):
-    return {"data": {"id": trip_id, "updated": True}}
+@router.patch("/{trip_id}", response_model=TripResponse)
+async def update_trip(
+    trip_id: str,
+    payload: TripUpdate,
+    current_user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    service = TripService(db)
+    trip = await service.update_trip(trip_id, current_user.id, payload)
+    return trip
 
 
-@router.delete("/{trip_id}")
-async def delete_trip(trip_id: str, current_user: User = Depends(get_current_user), db: AsyncSession = Depends(get_db)):
-    return {"data": {"id": trip_id, "deleted": True}}
+@router.delete("/{trip_id}", status_code=status.HTTP_204_NO_CONTENT)
+async def delete_trip(
+    trip_id: str,
+    current_user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    service = TripService(db)
+    await service.delete_trip(trip_id, current_user.id)
+    return None
 
 
 @router.post("/{trip_id}/analyze")
-async def start_analysis(trip_id: str, current_user: User = Depends(get_current_user), db: AsyncSession = Depends(get_db)):
-    return {"data": {"trip_id": trip_id, "workflow_run_id": "stub_run_id", "status": "QUEUED"}}
+async def start_analysis(
+    trip_id: str,
+    current_user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    service = TripService(db)
+    trip = await service.get_trip(trip_id, current_user.id)
+    return {
+        "data": {
+            "trip_id": trip.id,
+            "status": "QUEUED",
+            "message": "Trip analysis queued successfully for multi-agent synthesis.",
+        },
+        "meta": {
+            "trip_title": trip.title,
+        }
+    }
