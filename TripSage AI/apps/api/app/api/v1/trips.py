@@ -79,11 +79,41 @@ async def delete_trip(
 @router.post("/{trip_id}/analyze")
 async def start_analysis(
     trip_id: str,
+    background: bool = Query(False),
     current_user: User = Depends(get_current_user),
     db: AsyncSession = Depends(get_db),
 ):
+    import asyncio
+    import uuid
+    from app.db.session import async_session_maker
+
+    run_id = str(uuid.uuid4())
+
+    if background:
+        # Launch workflow asynchronously so frontend SSE can stream real-time transitions
+        async def _run_bg():
+            async with async_session_maker() as session:
+                service = WorkflowService(session)
+                await service.execute_trip_analysis(trip_id, current_user.id, run_id=run_id)
+
+        asyncio.create_task(_run_bg())
+
+        return {
+            "data": {
+                "trip_id": trip_id,
+                "workflow_run_id": run_id,
+                "status": "RUNNING",
+                "current_stage": "DESTINATION_RESEARCH",
+            },
+            "meta": {
+                "trip_id": trip_id,
+                "status": "RUNNING",
+            },
+        }
+
+    # Synchronous execution
     workflow_service = WorkflowService(db)
-    result = await workflow_service.execute_trip_analysis(trip_id, current_user.id)
+    result = await workflow_service.execute_trip_analysis(trip_id, current_user.id, run_id=run_id)
     return {
         "data": result,
         "meta": {

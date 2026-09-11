@@ -61,15 +61,7 @@ export default function TripWorkspacePage() {
 
   const handleStartAnalysis = async () => {
     if (!tripId) return;
-    setAnalyzing(true);
-    try {
-      await apiClient(`/trips/${tripId}/analyze`, { method: "POST" });
-      setTrip((prev) => prev ? { ...prev, status: "ANALYZING" } : null);
-    } catch (err: any) {
-      setError(err.message || "Failed to trigger multi-agent analysis.");
-    } finally {
-      setAnalyzing(false);
-    }
+    router.push(`/app/trips/${tripId}/analysis`);
   };
 
   if (loading) {
