@@ -2,6 +2,9 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.config import settings
+from app.db.base import Base
+from app.db.session import engine
+import app.models  # Ensure all models are registered
 from app.api.v1.auth import router as auth_router
 from app.api.v1.trips import router as trips_router
 from app.api.v1.workflows import router as workflows_router
@@ -11,7 +14,9 @@ from app.api.v1.research import router as research_router
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Startup tasks
+    # Startup: ensure tables exist
+    async with engine.begin() as conn:
+        await conn.run_sync(Base.metadata.create_all)
     yield
     # Shutdown tasks
 

@@ -14,9 +14,9 @@ class Settings(BaseSettings):
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 * 24  # 24 hours
     
-    # Database
-    DATABASE_URL: str = "postgresql+asyncpg://postgres:postgres@localhost:5432/tripsagedb"
-    SYNC_DATABASE_URL: str = "postgresql://postgres:postgres@localhost:5432/tripsagedb"
+    # Database (defaults to local sqlite for dev, override with PostgreSQL in prod/env)
+    DATABASE_URL: str = "sqlite+aiosqlite:///./tripsage.db"
+    SYNC_DATABASE_URL: str = "sqlite:///./tripsage.db"
     
     # Redis
     REDIS_URL: str = "redis://localhost:6379/0"
