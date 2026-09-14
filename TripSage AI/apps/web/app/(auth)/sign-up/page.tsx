@@ -95,6 +95,44 @@ export default function SignUpPage() {
             </Button>
           </form>
 
+          <div className="relative my-6">
+            <div className="absolute inset-0 flex items-center">
+              <span className="w-full border-t border-stone-800" />
+            </div>
+            <div className="relative flex justify-center text-xs uppercase">
+              <span className="bg-stone-900 px-2 text-stone-500">Or continue without password</span>
+            </div>
+          </div>
+
+          <Button
+            type="button"
+            variant="secondary"
+            className="w-full border-amber-500/30 hover:border-amber-500/60 text-amber-300"
+            disabled={loading}
+            onClick={async () => {
+              setLoading(true);
+              setError(null);
+              try {
+                const data = await apiClient<{ access_token: string; user_id: string; email: string; name: string | null }>(
+                  "/auth/guest",
+                  { method: "POST" }
+                );
+                login(data.access_token, {
+                  id: data.user_id,
+                  email: data.email,
+                  name: data.name,
+                });
+                router.push("/app/dashboard");
+              } catch (err: any) {
+                setError(err.message || "Failed to start guest session");
+              } finally {
+                setLoading(false);
+              }
+            }}
+          >
+            ⚡ Instant Demo Access (Guest Mode)
+          </Button>
+
           <div className="mt-6 text-center text-xs text-stone-400">
             Already have an account?{" "}
             <Link href="/sign-in" className="text-amber-400 hover:underline">

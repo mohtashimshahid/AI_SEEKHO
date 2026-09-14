@@ -49,6 +49,25 @@ async def login(req: UserLoginRequest, db: AsyncSession = Depends(get_db)):
     return Token(access_token=token, token_type="bearer", user_id=user.id, email=user.email, name=user.name)
 
 
+@router.post("/guest", response_model=Token)
+async def guest_login(db: AsyncSession = Depends(get_db)):
+    import uuid
+    guest_suffix = str(uuid.uuid4())[:8]
+    guest_email = f"guest_{guest_suffix}@tripsage.ai"
+    guest_user = User(
+        email=guest_email,
+        name=f"Guest Traveler {guest_suffix}",
+        hashed_password=get_password_hash(str(uuid.uuid4())),
+    )
+    db.add(guest_user)
+    await db.commit()
+    await db.refresh(guest_user)
+
+    token = create_access_token({"sub": guest_user.id, "email": guest_user.email})
+    return Token(access_token=token, token_type="bearer", user_id=guest_user.id, email=guest_user.email, name=guest_user.name)
+
+
 @router.get("/me", response_model=UserResponse)
 async def get_me(current_user: User = Depends(get_current_user)):
     return current_user
+
