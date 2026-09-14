@@ -2,6 +2,7 @@ import uuid
 from datetime import datetime, timezone
 from typing import Any, Dict, Optional
 from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy import delete
 from sqlalchemy.future import select
 
 from app.ai.graph.builder import trip_graph
@@ -38,6 +39,14 @@ class WorkflowService:
         at each stage transition and persisting intermediate specialist artifacts + final itinerary.
         """
         trip = await self.trip_service.get_trip(trip_id, user_id)
+
+        # 0. Clean any previous intermediate models for this trip to guarantee clean idempotence
+        await self.db.execute(delete(DestinationResearchModel).where(DestinationResearchModel.trip_id == trip.id))
+        await self.db.execute(delete(BudgetAnalysisModel).where(BudgetAnalysisModel.trip_id == trip.id))
+        await self.db.execute(delete(FlightStayOptionModel).where(FlightStayOptionModel.trip_id == trip.id))
+        await self.db.execute(delete(LocalExperienceModel).where(LocalExperienceModel.trip_id == trip.id))
+        await self.db.execute(delete(ItineraryModel).where(ItineraryModel.trip_id == trip.id))
+        await self.db.commit()
 
         # 1. Initialize or find WorkflowRun record
         if run_id:
@@ -379,6 +388,7 @@ class WorkflowService:
                     "destination": itin_res.destination,
                 },
             )
+            stream_manager.publish_event(run_id, "done", {"status": "COMPLETED"})
 
             handoff_logs = [
                 {
