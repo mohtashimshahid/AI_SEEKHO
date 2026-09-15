@@ -53,9 +53,6 @@ class FlightStayAgent:
 - Travel Style: {req.travel_style}
 - Accommodation Preference: {req.accommodation_preference}
 
-LIVE FLIGHT SEARCH DATA:
-{json.dumps(flight_data, indent=2)}
-
 DESTINATION BEST AREAS:
 {json.dumps(dest_data.get('top_neighborhoods', []), indent=2)}
 
@@ -63,9 +60,14 @@ ALLOCATED BUDGET GUIDANCE:
 - Flight budget target: {req.currency} {budget_analysis.flights if budget_analysis else 'Flexible'}
 - Stay budget target: {req.currency} {budget_analysis.accommodation if budget_analysis else 'Flexible'}
 
+REAL FLIGHT OFFERS (Duffel test mode — status: {flight_data['status']}):
+{json.dumps(flight_data['offers'], indent=2) if flight_data['offers'] else 'No live offers available — fall back to a realistic estimate.'}
+
 TASK:
+If real flight offers are listed above, base your flight recommendation on their actual prices and airlines directly rather than inventing numbers, and set price_status to "{flight_data['status']}".
+If no offers were returned, fall back to a realistic estimated price and set price_status to "ESTIMATED".
 Identify practical flight corridors with realistic departure/arrival considerations, and recommend stay options in prime walkable neighborhoods.
-Mark all unconfirmed prices as ESTIMATED. Return structured FlightStayOptions matching the schema."""
+Return structured FlightStayOptions matching the schema."""
 
         result = self.gateway.generate_structured_output(
             system_prompt=self.system_prompt,
@@ -75,24 +77,14 @@ Mark all unconfirmed prices as ESTIMATED. Return structured FlightStayOptions ma
 
         # Guarantee evidence source tags
         if not result.sources:
-            sources = [
+            result.sources = [
                 Source(
                     title=f"Flight Corridor & Stay Index ({req.origin} → {req.destination})",
-                    source_type="ESTIMATE",
+                    source_type="DUFFEL_TEST_API" if flight_data["status"] == "LIVE_TEST_DATA" else "ESTIMATE",
                     confidence="HIGH",
-                    snippet=f"Estimated corridor pricing and neighborhood accommodations for {req.accommodation_preference} style.",
+                    snippet=f"{'Live Duffel test-mode offers' if flight_data['status'] == 'LIVE_TEST_DATA' else 'Estimated corridor pricing'} for {req.accommodation_preference} style.",
                 )
             ]
-            if flight_data.get("status") == "LIVE_TEST_DATA":
-                sources.append(
-                    Source(
-                        title=f"Duffel Flight Index ({req.origin} → {req.destination})",
-                        source_type="FLIGHT_API",
-                        confidence="HIGH",
-                        snippet=f"Retrieved {len(flight_data.get('offers', []))} live flight offers.",
-                    )
-                )
-            result.sources = sources
 
         return result
 
