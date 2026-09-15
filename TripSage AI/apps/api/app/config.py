@@ -24,6 +24,7 @@ class Settings(BaseSettings):
     # AI & Tools
     OPENAI_API_KEY: str = ""
     TAVILY_API_KEY: str = ""
+    DUFFEL_API_KEY: str = ""
     MOCK_AI: bool = True
     
     # CORS
